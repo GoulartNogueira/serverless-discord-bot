@@ -1,6 +1,6 @@
 const {AWSLambdaServer, SlashCreator} = require('slash-create');
 
-const COMMANDS_DIR = '/opt/nodejs/commands';
+const COMMANDS_DIR = '/api/commands_layer/nodejs/commands';
 
 const creator = new SlashCreator({
     applicationID: process.env.DISCORD_APP_ID,

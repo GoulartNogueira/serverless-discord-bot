@@ -2,7 +2,7 @@ const {once} = require('events');
 const CfnLambda = require('cfn-lambda');
 const {SlashCreator} = require('slash-create');
 
-const COMMANDS_DIR = '/opt/nodejs/commands';
+const COMMANDS_DIR = '/api/commands_layer/nodejs/commands';
 
 exports.lambdaHandler = CfnLambda({
     AsyncCreate: handleCreateAsync,
