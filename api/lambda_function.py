@@ -1,4 +1,5 @@
 import json
+from http.server import BaseHTTPRequestHandler
 
 from nacl.signing import VerifyKey
 from nacl.exceptions import BadSignatureError
@@ -31,7 +32,15 @@ def ping_pong(body):
     if body.get("type") == 1:
         return True
     return False
-    
+
+class handler(BaseHTTPRequestHandler):
+	def do_GET(self):
+		self.send_response(200)
+		self.send_header('Content-type', 'text/plain')
+		self.end_headers()
+		self.wfile.write("\n\n\nWorking!! \o/".encode())
+		return
+
 def lambda_handler(event, context):
     print(f"event {event}") # debug print
     # verify the signature
